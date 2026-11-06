@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Manager Library</title>
+  <style>
+    :root { --bg:#fafaf7; --text:#1f2933; --muted:#52606d; --accent:#2f6f4f; --card:#ffffff; --line:#e4e7eb; }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg:#14181c; --text:#e6eaee; --muted:#9aa5b1; --accent:#6fcf97; --card:#1c2228; --line:#2c343c; }
+    }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: system-ui, Arial, sans-serif; background:var(--bg); color:var(--text); line-height:1.6; }
+    header { padding:64px 20px; text-align:center; border-bottom:1px solid var(--line); }
+    h1 { margin:0 0 12px; font-size:clamp(2rem, 6vw, 3rem); }
+    header p { max-width:640px; margin:0 auto; color:var(--muted); font-size:1.1rem; }
+    main { max-width:960px; margin:0 auto; padding:40px 20px; }
+    h2 { color:var(--accent); margin-top:48px; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:16px; }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; }
+    .card h3 { margin:0 0 8px; }
+    .card p { margin:0; color:var(--muted); }
+    ul { padding-left:20px; }
+    footer { text-align:center; padding:32px 20px; color:var(--muted); border-top:1px solid var(--line); }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Manager Library</h1>
+    <p>Un sistema para que una biblioteca pequeña lleve su catálogo de libros, sus socios y sus préstamos, y vea qué libros se prestan más.</p>
+  </header>
+
+  <main>
+    <h2>Qué puedes hacer</h2>
+    <div class="grid">
+      <div class="card"><h3>Catálogo</h3><p>Busca libros por título, autor o categoría, con portada opcional y ejemplares disponibles.</p></div>
+      <div class="card"><h3>Socios</h3><p>Registra a las personas que piden libros prestados, con nombre y documento.</p></div>
+      <div class="card"><h3>Préstamos</h3><p>Presta de 1 a 3 libros por socio, con plazo de 14 días, y registra la devolución por libro.</p></div>
+      <div class="card"><h3>Vencidos</h3><p>Consulta qué libros no se devolvieron a tiempo y cuántos días de retraso llevan.</p></div>
+      <div class="card"><h3>Reporte</h3><p>Descubre cuáles son los libros más prestados en un rango de fechas.</p></div>
+      <div class="card"><h3>Roles</h3><p>Administrador y bibliotecario, cada uno con los permisos que necesita.</p></div>
+    </div>
+
+    <h2>Reglas claras</h2>
+    <ul>
+      <li>Plazo de préstamo de 14 días.</li>
+      <li>Máximo 3 libros sin devolver por socio.</li>
+      <li>Un socio con libros vencidos no puede pedir más hasta devolverlos.</li>
+      <li>Los préstamos y las devoluciones nunca se borran.</li>
+    </ul>
+
+    <h2>Cómo está hecho</h2>
+    <p>Backend en PHP con Laravel, frontend en React y base de datos PostgreSQL, todo guiado por una especificación (SDD).</p>
+  </main>
+
+  <footer>Manager Library · Ficha ADSO 3239188</footer>
+</body>
+</html>
